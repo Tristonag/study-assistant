@@ -1,0 +1,3 @@
+question,deck,page,answer,where
+"Example (delete this row): what does the diagram on the backpropagation slide show flowing backwards?",ITCS340_L07,14,"the error gradients, from the output layer back to the hidden layers",diagram
+"Example (delete this row): what is the time complexity in the table comparing sorting algorithms for merge sort?",ITCS_Algo_L03,9|10,"O(n log n)",table

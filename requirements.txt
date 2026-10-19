@@ -1,0 +1,9 @@
+google-genai        # Gemini API
+python-dotenv       # reads your .env file
+pymupdf             # reads PDFs and renders pages to pictures
+numpy               # vector maths for search
+sentence-transformers  # embedding model (also installs PyTorch, a big download)
+datasets            # downloads SlideVQA from Hugging Face
+pillow              # saves images
+rank_bm25           # keyword search (step 5)
+streamlit           # the web app (step 6)
