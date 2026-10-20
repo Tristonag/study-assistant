@@ -45,4 +45,5 @@ SETS = {
 IMAGE_DPI = 110            # page picture quality: sharp enough to read, small enough to be cheap
 VISUAL_WORDS = 30          # a page with fewer words than this counts as "mostly visual"
 VISUAL_IMAGE_SHARE = 0.3   # ...and so does a page where pictures cover 30% or more
+VISUAL_MAX_WORDS = 60      # a page with more words than this is a text slide, whatever the pictures
 TOP_K = 5                  # how many slides to retrieve per question

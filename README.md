@@ -9,6 +9,8 @@ Ask a question about your lecture slides and get an answer that cites the exact 
 Most of the tools nowadays that help students study with their lecture slides only read the text layer of a PDF. Usually, in real
 courses, lecture slides put a lot of their meaning or details into diagrams, tables, charts, screenshots or equations, and the tools that only extracts plain text throws it all away. If you asked the tools about a diagram, the tools either cant find the right slide or would make something up.
 
+In 148 pages from my own lecture decks, 20% are mostly visual: diagrams, charts and screenshots with little or no text for a normal chat-with-PDF tool to read. It depends a lot on the course: 44% of my Machine Learning lecture 6 is visual, against 8% of my Ethics lecture. Those visual slides are often the ones exam questions are about.
+
 ## Who it's for
 
 Any student with lecture slides, at any university. My classmates are the first users.
