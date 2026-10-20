@@ -44,16 +44,14 @@ def load_questions(set_name: str) -> list[dict]:
 
 def hit_at_k(ranked_ids: list[str], gold: set[str], k: int) -> int:
     """1 if any correct id is in the first k results, else 0."""
-    # TODO(1): one line. Look at ranked_ids[:k] and check whether any of them is in gold.
-    raise NotImplementedError("TODO(1) in evaluate.py: read the comment just above this line")
-
+    return int(any(slide_id in gold for slide_id in ranked_ids[:k]))
 
 def reciprocal_rank(ranked_ids: list[str], gold: set[str], k: int) -> float:
     """1 / (position of the first correct id), looking only at the first k. 0 if none."""
-    # TODO(2): loop over ranked_ids[:k] with enumerate(..., start=1) so positions start at 1.
-    #   Return 1 / position for the first id that is in gold. If none, return 0.0.
-    raise NotImplementedError("TODO(2) in evaluate.py: read the comment just above this line")
-
+    for position, slide_id in enumerate(ranked_ids[:k], start=1):
+        if slide_id in gold:
+            return 1 / position
+    return 0.0
 
 def normalize(s: str) -> str:
     return re.sub(r"[^a-z0-9.%]+", " ", s.lower()).strip()
