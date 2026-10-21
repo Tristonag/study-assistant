@@ -2,8 +2,6 @@
 
 Ask a question about your lecture slides and get an answer that cites the exact slide, including what's only in the diagrams, tables, charts and code screenshots.
 
-> Rewrite the next section in your own words before you commit. Recruiters can tell.
-
 ## The problem
 
 Most of the tools nowadays that help students study with their lecture slides only read the text layer of a PDF. Usually, in real
@@ -40,8 +38,8 @@ Filled in as I go. Full history in `results/history.csv`.
 
 ## Plan
 
-- [ ] Step 0: repo, API key, cost plan
-- [ ] Step 1: read slides (text, titles, page pictures)
+- [x] Step 0: repo, API key, cost plan
+- [x] Step 1: read slides (text, titles, page pictures)
 - [ ] Step 2: eval set (my 50 questions + SlideVQA)
 - [ ] Step 3: text-only baseline, measured
 - [ ] Step 4: slide-aware version: a vision model reads the visuals
