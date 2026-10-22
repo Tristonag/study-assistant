@@ -29,14 +29,22 @@ Return only the JSON."""
 
 def parse_caption(raw: str) -> dict:
     """Turn the model's reply into {"title": ..., "text": ..., "visual": ...}."""
-    # TODO(1): the reply should be JSON, but models sometimes wrap it in ```json fences.
-    #   1. start = raw.find("{") and end = raw.rfind("}")
-    #   2. json.loads(raw[start:end + 1]) inside try/except ValueError
-    #   3. if it fails (or there's no {), return {"title": "", "text": "", "visual": raw.strip()}
-    #      so you keep what the model said instead of losing a paid call
-    #   4. otherwise return the 3 keys as strings: str(data.get(key) or "").strip()
-    raise NotImplementedError("TODO(1) in captions.py: read the comment just above this line")
+    start = raw.find("{")
+    end = raw.rfind("}")
 
+    try:
+        if start == -1:
+            raise ValueError("No JSON object found")
+
+        data = json.loads(raw[start:end + 1])
+
+    except ValueError:
+        return {"title": "", "text": "", "visual": raw.strip()}
+
+    return {
+        key: str(data.get(key) or "").strip()
+        for key in ("title", "text", "visual")
+    }
 
 def caption_slide(slide: dict) -> dict:
     raw, usage = llm.ask(PROMPT, model=config.CAPTION_MODEL, images=[config.ROOT / slide["image"]],
